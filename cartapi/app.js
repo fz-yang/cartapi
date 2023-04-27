@@ -1,20 +1,13 @@
 var express = require("express");
 var cors = require("cors");
 var app = express();
-app.listen(8000);
+var mysql= require("mysql.js")
+app.listen(3000);
 app.use( express.static("public")  );
 app.use( express.json() );
 app.use( express.urlencoded( {extended: true}) );
 app.use(cors());
 
-var mysql = require("mysql");
-var conn = mysql.createConnection({
-    user: "root",
-    password: "root",
-    host: "localhost",
-    port: 3370,
-    database: "lab2023"
-});
 
 conn.connect(function (err) {
     console.log(err);
